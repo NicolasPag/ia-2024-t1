@@ -1,6 +1,6 @@
 """Implementação da busca em profundidade."""
 
-from util import reverse_path
+#from util import reverse_path
 
 
 def dfs(graph, start: int, goal: int) -> (int, float, [int]):

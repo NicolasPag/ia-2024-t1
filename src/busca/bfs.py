@@ -2,8 +2,20 @@
 
 from queue import deque as Queue
 
-from util import reverse_path
+#from util import reverse_path
 
 
 def bfs(graph, start: int, goal: int) -> (int, float, [int]):
     """Busca um caminho entre start e goal usando busca em largura."""
+    
+    try:
+        graph[start]
+        graph[goal]
+
+    except KeyError:
+        print("Erro")
+        return None
+    
+    stack = [(start, None)]
+
+    
