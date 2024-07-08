@@ -12,7 +12,7 @@ def a_star(graph, start: int, goal: int) -> (int, float, [int]):
     cameFrom[start] = None
 
     constSoFar = {}
-    constSoFar[start] = None
+    constSoFar[start] = 0
 
     countNodes = 0
 
@@ -33,7 +33,7 @@ def a_star(graph, start: int, goal: int) -> (int, float, [int]):
             break
 
         for nextNode, nextNodeCost in graph[current][1].items():
-            newCost = constSoFar[current] + nextNodeCost
+            newCost = float(constSoFar[current]) + nextNodeCost
 
             if (
                 nextNode not in constSoFar or
