@@ -6,10 +6,10 @@ import sys
 def read_graph(filename: str):
     """Le uma estrutura de grafo de um arquivo e retorna a estrutura."""
     graph = []
-    with open(filename, "rt", encoding="utf-8") as input_file:
-        vertex_count = int(input_file.readline().strip())
-        for _ in range(vertex_count):
-            index, latitude, longitude = input_file.readline().strip().split()
+    with open(filename, "rt", encoding="utf-8") as inputFile:
+        vertexCount = int(inputFile.readline().strip())
+        for _ in range(vertexCount):
+            index, latitude, longitude = inputFile.readline().strip().split()
 
             index, latitude, longitude = [
                 int(index),
@@ -19,19 +19,19 @@ def read_graph(filename: str):
 
             graph.append([(latitude, longitude), {}])
             
-        edge_count = int(input_file.readline().strip())
+        edgeCount = int(inputFile.readline().strip())
 
-        for _ in range(edge_count):
-            from_vertex, to_vertex, cost = (
-                input_file.readline().strip().split()
+        for _ in range(edgeCount):
+            fromVertex, toVertex, cost = (
+                inputFile.readline().strip().split()
             )
 
-            from_vertex, to_vertex, cost = [
-                int(from_vertex),
-                int(to_vertex),
+            fromVertex, toVertex, cost = [
+                int(fromVertex),
+                int(toVertex),
                 float(cost)
             ]
             
-            graph[from_vertex][1][to_vertex] = cost
+            graph[fromVertex][1][toVertex] = cost
     
     return graph
