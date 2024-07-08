@@ -5,7 +5,7 @@ from busca import a_star
 
 
 if __name__ == "__main__":
-    grafo = read_graph(r"C:\Users\nicol\OneDrive\Documentos\GitHub\ia-2024-t1\mapas\mini_map.txt")
+    grafo = read_graph(r"C:\Users\nicol\OneDrive\Documentos\GitHub\.venv\ia-2024-t1\mapas\mini_map.txt")
 
     print(grafo)
 
